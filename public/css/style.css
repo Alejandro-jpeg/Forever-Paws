@@ -45,7 +45,7 @@
 .main {
     flex: 1;
     background-color: var(--main_bgc);
-    font-family: 'Josefin Slab', serif;
+    font-family: 'Dosis', sans-serif;
     color: var(--main_text)
 }
 
