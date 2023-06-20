@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ForeverPaws</title>
+
+        <!-- Bulma css framework to give style and make it responsive  -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+        <!-- Google fonts  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chilanka&family=Dosis&family=Lilita+One&family=Josefin+Sans:wght@700&family=Josefin+Slab&family=Ysabeau&display=swap" rel="stylesheet">
+        
+        <!-- Custom stylesheet  -->
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+    </head>
+
+<body>
+    <header class="hnf section has-text-centered">
+        <div>
+            <img src="/public/assets/foreverpaws_logo.png" alt="ForeverPaws Logo" class="logo">
+            <nav class="navheader has-text-centered mt-3">
+                <a class="button navheader is-size-5 custom-box mr-4" href="/">Home</a>
+                <a class="button navheader is-size-5 custom-box mr-4" href="/dashboard">About Us</a>
+                <a class="button navheader is-size-5 custom-box mr-4" href="/dashboard">Adoption Process</a>
+                <a class="button navheader is-size-5 custom-box mr-4" href="/dashboard">Pet Literature</a>
+                <a class="button navheader is-size-5 custom-box mr-4" href="/dashboard">Become a Pet Ally</a>
+                {{#if loggedIn}}
+                    <a class="button navheader is-size-5 custom-box mr-4" href="/dashboard">My Dashboard</a>
+                    <a id="logout" class="button navheader is-size-5 custom-box mr-4" href="/api/users/logout">Logout</a>
+                {{else}}
+                    <a class="button navheader is-size-5 custom-box-sl mr-4 " href="/signup">Sign Up</a>
+                    <a class="button navheader is-size-5 custom-box-sl mr-4 " href="/login">Login</a>
+                {{/if}}
+            </nav>
+        </div>
+    </header>
+
+    <main class="main section is-size-5 form-container">
+
+        {{{body}}}
+
+    </main>
+
+    <footer class="hnf footer">
+        <div class="content has-text-centered is-size-4">
+            <p>Guardians Advocating for the Support and Empowerment of Animals  &copy; 2023
+            </p>
+        </div>
+    </footer>      
+
+    <!-- Render script for logged in users only -->
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+
+</body>
+
+</html>
