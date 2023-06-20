@@ -35,6 +35,20 @@ Pet.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        location:{
+            type: DataTypes.STRING,
+            references:{
+                model:'agency',
+                key: 'location',
+            },
+        },
+        agency:{
+            type: DataTypes.STRING,
+            references:{
+                model:'agency',
+                key: 'name',
+            },
+        },
     },
     {
         sequelize,
