@@ -25,7 +25,7 @@ Agencies.init(
     },
     location: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     webpage: {
       type: DataTypes.STRING,
@@ -40,7 +40,7 @@ Agencies.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'agencies',
+    modelName: 'agency',
   }
 );
 
