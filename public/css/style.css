@@ -1,0 +1,69 @@
+:root {
+    --hnf_bgc:#884A39;
+    --hnf_text: white;
+    --main_bgc: #F9E0BB;
+    --main_text: black;
+    --nav_text: #f6f6f8;
+    --navbar_bgc: #C38154;
+    --navbar_bgcsl: #1471A7;
+    --navbar_hbgcsl: #105a86;
+    --box_bgc: #FFC26F;
+}
+
+.hnf {
+    font-family: 'Lilita One', cursive;
+    color: var(--hnf_text);
+    background-color: var(--hnf_bgc);
+}
+
+.navheader {
+    font-family: 'Josefin Sans', sans-serif;
+    color: var(--nav_text);
+    background-color: var(--hnf_bgc);
+}
+.custom-box {
+    background-color: var(--navbar_bgc);
+    border-radius: 4px;
+    padding: 10px;
+}
+.custom-box:hover {
+    background-color: var(--hnf_text);
+    border-radius: 4px;
+    padding: 10px;
+}
+.custom-box-sl {
+    background-color: var(--navbar_bgcsl);
+}
+.custom-box-sl:hover {
+    background-color: var(--navbar_hbgcsl);
+
+    color: var(--main_text);
+}
+
+.main {
+    flex: 1;
+    background-color: var(--main_bgc);
+    font-family: 'Josefin Slab', serif;
+    color: var(--main_text)
+}
+
+.footer {
+    margin-top: auto;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#blogbox {
+    border: solid ;
+    margin: 50px 20px 20px 20px;
+    padding: 30px 30px 30px 30px;
+    background-color: var(--box_bgc);
+}
