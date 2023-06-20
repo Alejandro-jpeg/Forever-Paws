@@ -8,53 +8,53 @@ class User extends Model {}
 
 // set up fields and rules for User model
 User.init(
-    {
+  {
     id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoincrement: true,
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoincrement: true,
     },
     full_name: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     phone: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        validate: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
         isDecimal: true,
-        },
+      },
     },
     email_address: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
         isEmail: true,
-        },
+      },
     },
     street_address: {
-        type: DataTypes.STRING,
-        allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     description: {
-        type: DataTypes.TEXT,
+      type: DataTypes.TEXT,
     },
-    favorite_pet_id:{
-    type: DataTypes.INTEGER,
-    reference: {
-        model: 'pet',
-        key: 'id'
-    }
-    }
+    favorite_pet_id: {
+      type: DataTypes.INTEGER,
+      reference: {
+        model: "pet",
+        key: "id",
+      },
     },
-    {
+  },
+  {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: "user",
-        }
+  }
 );
 
 module.exports = User;
