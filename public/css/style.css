@@ -8,6 +8,7 @@
     --navbar_bgcsl: #1471A7;
     --navbar_hbgcsl: #105a86;
     --box_bgc: #FFC26F;
+    --form_bgc: #B4C7E7;
 }
 
 .hnf {
@@ -33,11 +34,12 @@
 }
 .custom-box-sl {
     background-color: var(--navbar_bgcsl);
+    color: var(--hnf_text);
 }
 .custom-box-sl:hover {
     background-color: var(--navbar_hbgcsl);
 
-    color: var(--main_text);
+    color: var(--hnf_text);
 }
 
 .main {
@@ -66,4 +68,15 @@ body {
     margin: 50px 20px 20px 20px;
     padding: 30px 30px 30px 30px;
     background-color: var(--box_bgc);
+}
+
+.formbgc {
+    background-color: var(--form_bgc);
+
+}
+.field {
+    font-family: 'Josefin Sans', sans-serif;
+}
+.search-icon {
+    margin-right: 10px;
 }
