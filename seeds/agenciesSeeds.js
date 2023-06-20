@@ -32,5 +32,5 @@ const agencyData = [
     }
   ]
 
-const seedAgencies = () => Agencies.bulkkCreate(agencyData);
+const seedAgencies = () => Agencies.bulkCreate(agencyData);
 module.exports = seedAgencies;
