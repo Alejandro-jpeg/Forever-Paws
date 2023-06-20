@@ -23,13 +23,16 @@ Agencies.init(
         isEmail: true,
       },
     },
-    address: {
+    location: {
       type: DataTypes.STRING,
       allowNull: true,
     },
     webpage: {
       type: DataTypes.STRING,
       allowNull: true,
+      validate: {
+        isUrl: true,
+      },
     },
   },
   {
