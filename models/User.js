@@ -31,8 +31,14 @@ User.init(
       allowNull: false,
       validate: {
         isEmail: true,
+        },
+    }, password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [8],
+        },
       },
-    },
     street_address: {
       type: DataTypes.STRING,
       allowNull: false,
