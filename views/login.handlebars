@@ -1,29 +1,51 @@
-<h2>Login</h2>
+<div class=" mb-4 project" id="blogbox">
 
-<p>Please login to access your dashboard</p>
+            <div>
 
-<form>
+                <img src="/public/assets/login.png" alt="Login">
+            
+            </div>
+            
+            <section class="section">
 
-    <div>
+                <p class="is-size-4 is-size-6-mobile has-text-justified" >
 
-        <label>email:</label>
-        <input type="text"/>
+                    Please login to access your dashboard
 
-    </div>
+                </p>
+                
+                <form class="box formbgc">
 
-    <div>
+                    <div class="field">
 
-        <label>password:</label>
-        <input type="password"/>
+                      <label for="email-login" class="label">Email</label>
 
-    </div>
+                      <div class="control">
 
-    <div>
+                        <input class="input" type="email" placeholder="e.g. alex@example.com">
 
-        <button type="submit">login</button>
+                      </div>
 
-    </div>
+                    </div>
+                  
+                    <div class="field">
 
-</form>
+                      <label for="password-login" class="label">Password</label>
 
-<!-- Pending to link to the js file -->
+                      <div class="control">
+
+                        <input class="input" type="password" placeholder="********">
+
+                      </div>
+
+                    </div>
+                  
+                    <button class="button loginbtn has-text-white">Login</button>
+
+                </form>
+            
+            </section>
+
+</div>
+
+<script src="/public/js/login.js"></script>

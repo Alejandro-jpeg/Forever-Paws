@@ -80,3 +80,6 @@ body {
 .search-icon {
     margin-right: 10px;
 }
+.loginbtn {
+    background-color: var(--navbar_hbgcsl);
+}
