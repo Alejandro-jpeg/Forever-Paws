@@ -9,10 +9,10 @@ const seeding = async () => {
         console.log('--- DATABASE SYNCED ---');
     await seedPets();
         console.log('--- PETS SEEDED ---');
+    await seedUsers();
+    console.log('--- USERS SEEDED ---');
     await seedAgencies();
         console.log('--- AGENCIES SEEDED ---');
-    /* seeding functions here */
-
     process.exit(0);
 };
 
