@@ -35,7 +35,7 @@ searchButton.addEventListener('click', () => {
         })
        .then(response => response.json())
            .then(data => {
-         // Handle the server's response, such as updating the UI with the rendered HTML
+         searchResultsContainer.innerHTML = html;
          console.log(data);
        })
        .catch(error => {
