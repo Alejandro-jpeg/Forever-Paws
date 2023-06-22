@@ -80,6 +80,15 @@ body {
 .search-icon {
     margin-right: 10px;
 }
-.loginbtn {
-    background-color: var(--navbar_hbgcsl);
+.querycard {
+    background-color: var(--navbar_bgcsl);
+}
+.perfect-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-color: white;
+}
+.hidden {
+    display: none;
 }
