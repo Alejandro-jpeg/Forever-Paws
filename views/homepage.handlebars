@@ -8,14 +8,16 @@
 
                 <div class="column is-one-third">
                     <!-- City dropdown -->
-                    <div class="field ">
-                        <label class="label ">City</label>
+                    <div class="field">
+                        <label class="label city-label">City</label>
                         <div class="control">
                             <div class="select">
-                                <select>
+                                <select name="city">
                                     <!-- Populate options dynamically using homeRoutes -->
                                     <option>Select a city</option>
-                                    <!-- Add options fetched from the backend here -->
+                                    {{#each cities as |city|}}
+                                        <option>{{city}}</option>
+                                    {{/each}}
                                 </select>
                             </div>
                         </div>
@@ -28,10 +30,12 @@
                         <label class="label">Type</label>
                         <div class="control">
                             <div class="select">
-                                <select>
+                                <select name="type">
                                     <!-- Populate options dynamically using homeRoutes -->
                                     <option>Select a type</option>
-                                    <!-- Add options fetched from the backend here -->
+                                    {{#each types as |type|}}
+                                        <option>{{type}}</option>
+                                    {{/each}}
                                 </select>
                             </div>
                         </div>
@@ -44,10 +48,12 @@
                         <label class="label">Breed</label>
                         <div class="control">
                             <div class="select">
-                                <select>
-                                    <!-- Populate options dynamically using homeRoutes-->
-                                    <option>Select a breed</option>
-                                    <!-- Add options fetched from the backend here -->
+                                <select name="breed">
+                                    <!-- Populate options dynamically using homeRoutes -->
+                                    <option>Select a type</option>
+                                    {{#each breeds as |breed|}}
+                                        <option>{{breed}}</option>
+                                    {{/each}}
                                 </select>
                             </div>
                         </div>
@@ -60,10 +66,12 @@
                         <label class="label">Gender</label>
                         <div class="control">
                             <div class="select">
-                                <select>
-                                    <!-- Populate options dynamically using homeRoutes-->
+                                <select name="gender">
+                                    <!-- Populate options dynamically using homeRoutes -->
                                     <option>Select a gender</option>
-                                    <!-- Add options fetched from the backend here -->
+                                    {{#each genders as |gender|}}
+                                        <option>{{gender}}</option>
+                                    {{/each}}
                                 </select>
                             </div>
                         </div>
@@ -76,10 +84,12 @@
                         <label class="label">Age Range</label>
                         <div class="control">
                             <div class="select">
-                                <select>
-                                    <!-- Populate options dynamically using homeRoutes-->
+                                <select name="ageRange">
+                                    <!-- Populate options dynamically using homeRoutes -->
                                     <option>Select an age range</option>
-                                    <!-- Add options fetched from the backend here -->
+                                    {{#each ageRanges as |ageRAnge|}}
+                                        <option>{{ageRAnge}}</option>
+                                    {{/each}}
                                 </select>
                             </div>
                         </div>
@@ -92,10 +102,12 @@
                         <label class="label">Agency</label>
                         <div class="control">
                             <div class="select">
-                                <select>
-                                    <!-- Populate options dynamically using homeRoutes-->
+                                <select name="agency">
+                                    <!-- Populate options dynamically using homeRoutes -->
                                     <option>Select an agency</option>
-                                    <!-- Add options fetched from the backend here -->
+                                    {{#each agencies as |agency|}}
+                                        <option>{{agency}}</option>
+                                    {{/each}}
                                 </select>
                             </div>
                         </div>
