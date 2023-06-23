@@ -3,9 +3,9 @@
         <img src="assets/submit_pet_form.png" alt="Submit Pet">
     </div>
     <section class="section ">
+        <p>Thank you for choosing to submit a pet for adoption on our portal. Please provide the following information about the pet. All fields marked with an asterisk (*) are required.</p>
+        
         <div class="container card formbgc p-6">
-            
-            <p>Thank you for choosing to submit a pet for adoption on our portal. Please provide the following information about the pet. All fields marked with an asterisk (*) are required.</p>
             
             <div class="columns">
 
@@ -19,14 +19,16 @@
                             <input class="input" type="text" placeholder="Write pet name">
                         </div>
                     </div>
-                    <!-- Breed dropdown -->
+                    <!-- Pet type dropdown -->
                     <div class="field">
-                        <label class="label">Breed</label>
+                        <label class="label">Pet type</label>
                         <div class="control">
                             <div class="select">
                                 <select>
                                     <!-- Populate options dynamically using homeRoutes -->
-                                    <option>Select a Breed</option>
+                                    <option>Select a Pet type</option>
+                                    <option>Dog</option>
+                                    <option>Cat</option>
                                     <!-- Add options fetched from the backend here -->
                                 </select>
                             </div>
@@ -40,6 +42,8 @@
                                 <select>
                                     <!-- Populate options dynamically using homeRoutes-->
                                     <option>Select Gender</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
                                     <!-- Add options fetched from the backend here -->
                                 </select>
                             </div>
@@ -53,6 +57,11 @@
                                 <select>
                                     <!-- Populate options dynamically using homeRoutes-->
                                     <option>Select an Agency</option>
+                                    <option>Paw Patrol</option>
+                                    <option>Kittens-n-Kisses</option>
+                                    <option>Happy Tails</option>
+                                    <option>Little Cute Heroes</option>
+                                    <option>Soft fur</option>
                                     <!-- Add options fetched from the backend here -->
                                 </select>
                             </div>
@@ -77,21 +86,14 @@
                 </div>
 
 
-
                 <!-- SECOND COLUMN -->
                 <div class="column is-half">
 
-                    <!-- Pet type dropdown -->
+                    <!-- Breed dropdown -->
                     <div class="field">
-                        <label class="label">Pet type</label>
+                        <label class="label">Breed</label>
                         <div class="control">
-                            <div class="select">
-                                <select>
-                                    <!-- Populate options dynamically using homeRoutes -->
-                                    <option>Select a Pet type</option>
-                                    <!-- Add options fetched from the backend here -->
-                                </select>
-                            </div>
+                            <input class="input" type="text" placeholder="Write a breed">
                         </div>
                     </div>
                     <!-- Age range dropdown -->
@@ -102,6 +104,9 @@
                                 <select>
                                     <!-- Populate options dynamically using homeRoutes-->
                                     <option>Select an Age range</option>
+                                    <option>Puppy</option>
+                                    <option>Adult</option>
+                                    <option>Senior</option>
                                     <!-- Add options fetched from the backend here -->
                                 </select>
                             </div>
@@ -116,14 +121,19 @@
                             </div>
                         </div>
                     </div>
-                    <!-- City dropdown -->
+                    <!-- State dropdown -->
                     <div class="field">
-                        <label class="label">City</label>
+                        <label class="label">State</label>
                         <div class="control">
                             <div class="select">
                                 <select>
                                     <!-- Populate options dynamically using homeRoutes-->
-                                    <option>Select a City</option>
+                                    <option>Select a State</option>
+                                    <option>Texas</option>
+                                    <option>Colorado</option>
+                                    <option>New York</option>
+                                    <option>Vermont</option>
+                                    <option>Florida</option>
                                     <!-- Add options fetched from the backend here -->
                                 </select>
                             </div>
@@ -131,8 +141,6 @@
                     </div>
 
                 </div>
-
-
 
 
             </div>
@@ -147,6 +155,10 @@
             </div>
 
         </div>
+
+        <br>
+        <p>By submitting this form, I confirm that the information provided is true and accurate to the best of my knowledge. I understand that the pet will be reviewed and considered for adoption through our portal, and the final decision is subject to approval by our team.</p>
+        
     </section>
 </div>
 <script src="./js/submitpet.js"></script>
