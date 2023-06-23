@@ -4,7 +4,7 @@ const breedDropdown = document.querySelector("#breed-dropdown");
 const genderDropdown = document.querySelector("#gender-dropdown");
 const ageRangeDropdown = document.querySelector("#age-range-dropdown");
 const agencyDropdown = document.querySelector("#agency-dropdown");
-const searchButton = document.querySelector(".search-text");
+const searchButton = document.querySelector("#search-button");
 let selectedResults = [];
 
 
@@ -67,6 +67,6 @@ searchButton.addEventListener("click", () => {
       console.log(data);
     })
     .catch((error) => {
-      console.error("Error:", error);
+      console.log(error);
     });
 });
