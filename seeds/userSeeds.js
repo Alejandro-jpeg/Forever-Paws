@@ -20,7 +20,7 @@ const userData = [
     street_address: "711 E. Saint Anne Ave",
     description: "I would like a black cat as I find them very cute",
     favorite_pet_id: 2,
-    password: "^&$RGSDGN@$!",
+    password: "12345678",
   },
   {
     id: 3,
