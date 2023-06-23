@@ -1,21 +1,22 @@
 const router = require('express').Router();
-const {User} = require('../../models/User');
+const User = require('../../models/User');
 
 //USER LOGIN 
 router.post('/login', async (req, res) => {
     try {
         //Checks for the email
-        const dbUSerData = await User.findOne({
+        const dbUserData = await User.findOne({
             where: {
-                email: req.body.email,
+                email_address: req.body.email_address
             },
         });
-        if(!dbUSerData){
+        
+        if(!dbUserData){
             res.status(400).json({message: 'Incorrect email or password'})
             return;
         }
-        //Checks for the password
-        const validPassword = await dbUSerData.checkPassword(req.body.password);
+        //Checks for the password  //THE ERROR IS IN THIS BLOCK OF CODE ERROR ERROR ERROR ERROR ERROR ERROR 
+        const validPassword = await dbUserData.checkPassword(req.body.password);
         if(!validPassword){
             res.status(400).json({message: 'Incorrect email or password'})
             return;
@@ -45,3 +46,4 @@ router.post('/logout', (req, res) => {
     }
   });
   
+  module.exports = router;
