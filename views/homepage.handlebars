@@ -12,7 +12,7 @@
                         <label class="label city-label">City</label>
                         <div class="control">
                             <div class="select">
-                                <select name="city">
+                                <select name="city" id="city-dropdown">
                                     <!-- Populate options dynamically using homeRoutes -->
                                     <option value="">Select a city</option> 
                                     {{#each cities as |city|}}
@@ -30,7 +30,7 @@
                         <label class="label">Type</label>
                         <div class="control">
                             <div class="select">
-                                <select name="type">
+                                <select name="type" id="type-dropdown">
                                     <!-- Populate options dynamically using homeRoutes -->
                                     <option value="">Select a type</option>
                                     {{#each types as |type|}}
@@ -47,7 +47,7 @@
                     <div class="field">
                         <label class="label">Breed</label>
                         <div class="control">
-                            <div class="select">
+                            <div class="select" id="#breed-dropdown">
                                 <select name="breed">
                                     <!-- Populate options dynamically using homeRoutes -->
                                     <option value="">Select a type</option>
@@ -66,7 +66,7 @@
                         <label class="label">Gender</label>
                         <div class="control">
                             <div class="select">
-                                <select name="gender">
+                                <select name="gender" id="#gender-dropdown">
                                     <!-- Populate options dynamically using homeRoutes -->
                                     <option value="">Select a gender</option>
                                     {{#each genders as |gender|}}
@@ -84,7 +84,7 @@
                         <label class="label">Age Range</label>
                         <div class="control">
                             <div class="select">
-                                <select name="ageRange">
+                                <select name="ageRange" id="#age-range-dropdown">
                                     <!-- Populate options dynamically using homeRoutes -->
                                     <option value="">Select an age range</option>
                                     {{#each ageRanges as |ageRAnge|}}
@@ -102,7 +102,7 @@
                         <label class="label">Agency</label>
                         <div class="control">
                             <div class="select">
-                                <select name="agency">
+                                <select name="agency" id="#agency-dropdown">
                                     <!-- Populate options dynamically using homeRoutes -->
                                     <option value="">Select an agency</option>
                                     {{#each agencies as |agency|}}
@@ -118,7 +118,7 @@
             <!-- Submit button we need to add an event listener and run a query search -->
             <div class="field is-grouped is-justify-content-flex-end">
                 <div class="control">
-                    <button class="button custom-box-sl">
+                    <button class="button custom-box-sl" id="search-button">
                         <img src="assets/search_icon.png" alt="Search Icon" class="search-icon">
                         <span class="search-text">Search</span>
                     </button>
