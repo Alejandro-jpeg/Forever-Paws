@@ -49,6 +49,10 @@ Pet.init(
         key: "id",
       },
     },
+    pet_photo: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }
   },
   {
     sequelize,
