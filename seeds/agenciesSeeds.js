@@ -13,12 +13,12 @@ const agencyData = [
     location: "New York",
   },
   {
-    name: "Little Cute Heroes",
-    location: "Vermont",
-  },
-  {
     name: "Soft fur",
     location: "Florida",
+  },
+  {
+    name: "Little Cute Heroes",
+    location: "Vermont",
   },
 ];
 
