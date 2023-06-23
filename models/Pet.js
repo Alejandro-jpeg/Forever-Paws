@@ -44,7 +44,6 @@ Pet.init(
     },
     pet_photo: {
       type: DataTypes.STRING,
-      allowNull: false,
     }
   },
   {
