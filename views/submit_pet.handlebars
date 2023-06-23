@@ -5,7 +5,7 @@
     <section class="section ">
         <p>Thank you for choosing to submit a pet for adoption on our portal. Please provide the following information about the pet. All fields marked with an asterisk (*) are required.</p>
         
-        <div class="container card formbgc p-6">
+        <div class="container card formbgc p-6 user-form">
             
             <div class="columns">
 
@@ -16,7 +16,7 @@
                     <div class="field ">
                         <label class="label ">Pet name</label>
                         <div class="control">
-                            <input class="input" type="text" placeholder="Write pet name">
+                            <input class="input pet-name" type="text" placeholder="Write pet name">
                         </div>
                     </div>
                     <!-- Pet type dropdown -->
@@ -24,7 +24,7 @@
                         <label class="label">Pet type</label>
                         <div class="control">
                             <div class="select">
-                                <select>
+                                <select class="pet-type">
                                     <!-- Populate options dynamically using homeRoutes -->
                                     <option>Select Any</option>
                                     <option>Dog</option>
@@ -39,7 +39,7 @@
                         <label class="label">Gender</label>
                         <div class="control">
                             <div class="select">
-                                <select>
+                                <select class="pet-gender">
                                     <!-- Populate options dynamically using homeRoutes-->
                                     <option>Select Any</option>
                                     <option>Male</option>
@@ -54,7 +54,7 @@
                         <label class="label">Agency</label>
                         <div class="control">
                             <div class="select">
-                                <select>
+                                <select class="agency-id">
                                     <!-- Populate options dynamically using homeRoutes-->
                                     <option>Select Any</option>
                                     <option>Paw Patrol</option>
@@ -71,7 +71,7 @@
                     <!-- Photo -->
                     <div class="file">
                     <label class="file-label">
-                        <input class="file-input" type="file" name="resume">
+                        <input class="file-input pet-photo" type="file" name="resume">
                         <span class="file-cta">
                         <span class="file-icon">
                             <i class="fas fa-upload"></i>
@@ -93,7 +93,7 @@
                     <div class="field">
                         <label class="label">Breed</label>
                         <div class="control">
-                            <input class="input" type="text" placeholder="Write a breed">
+                            <input class="input pet-breed" type="text" placeholder="Write a breed">
                         </div>
                     </div>
                     <!-- Age range dropdown -->
@@ -101,7 +101,7 @@
                         <label class="label">Age range</label>
                         <div class="control">
                             <div class="select">
-                                <select>
+                                <select class="pet-age-range">
                                     <!-- Populate options dynamically using homeRoutes-->
                                     <option>Select Any</option>
                                     <option>Puppy</option>
@@ -117,7 +117,7 @@
                         <label class="label">Description</label>
                         <div class="control">
                             <div class="control">
-                                <textarea class="textarea" placeholder="Description"></textarea>
+                                <textarea class="textarea description" placeholder="Description"></textarea>
                             </div>
                         </div>
                     </div>
@@ -126,7 +126,7 @@
                         <label class="label">State</label>
                         <div class="control">
                             <div class="select">
-                                <select>
+                                <select class="location">
                                     <!-- Populate options dynamically using homeRoutes-->
                                     <option>Select Any</option>
                                     <option>Texas</option>
@@ -148,7 +148,7 @@
             <!-- Submit button we need to add an event listener and run a query search -->
             <div class="field is-grouped is-justify-content-flex-end">
                 <div class="control">
-                    <button class="button custom-box-sl">
+                    <button class="button custom-box-sl submit-button">
                         <span class="search-text">Submit</span>
                     </button>
                 </div>
