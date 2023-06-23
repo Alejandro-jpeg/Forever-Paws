@@ -77,12 +77,28 @@ router.get('/submitpet', async(req, res) => {
     res.render('submit_pet');
 })
 
-router.get('/dashboard', async(req, res) => {
-    if(req.session.loggedIn = true){
-        res.render('dashboard');
-    }else{
-        res.render('login');
-    }
-})
-
+router.get('/dashboard', withAuth, async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+        });
+    
+        // Check if user data exists
+        if (!userData) {
+            res.status(404).json({ message: 'User not found' });
+            return;
+        }
+    
+        // Serialize data to be used by handlebars
+        const user = userData.get({ plain: true });
+    
+        res.render('dashboard', {
+            ...user,
+            loggedIn: true
+        });
+        } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: 'Internal server error' });
+        }
+});
 module.exports = router;
