@@ -20,22 +20,5 @@ const signupFormHandler = async (event) => {
     }
 };
 
+
 document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
-
-// passwordValidation.js
-
-function validatePassword() {
-    const passwordInput = document.getElementById('password-signup');
-    const password = passwordInput.value;
-    const passwordLength = password.length;
-    const errorMessage = document.getElementById('passwordError');
-
-    if (passwordLength < 8) {
-        errorMessage.textContent = 'Password must be at least 8 characters long.';
-    } else {
-        errorMessage.textContent = '';
-    }
-}
-
-const passwordInput = document.getElementById('password-signup');
-passwordInput.addEventListener('input', validatePassword);
