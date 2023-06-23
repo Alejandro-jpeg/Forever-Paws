@@ -1,0 +1,44 @@
+<div id="blogbox">
+            <p class="is-size-4 is-size-6-mobile has-text-centered" >
+                <b class="is-size-4 is-size-5-mobile">Welcome to your dashboard, {{username}}</b>
+            </p>
+            <br>
+            <br>
+            <div class="columns mb-4 project">
+                <div class="columns is-multiline">
+                {{#each pets as |pet|}}
+                <div class="column is-half">
+                <div class="card querycard has-text-centered">
+                    <div class="card-content">
+                    <div class="card has-background-white">
+                        <img src="{{pet.imageURL}}" alt="{{pet.imageURL}}">
+                    </div>
+                    <br>
+                    <div class="card formbgc">
+                        <p class="info-item">{{pet.pet_gender}}</p>
+                        <p class="info-item">{{pet.pet_age_range}}</p>
+                        <p class="info-item">{{pet.pet_type}}</p>
+                        <p class="info-item">@{{pet.location}}</p>
+                    </div>
+                    <br>
+                    <div class="card formbgc">
+                        <p class="info-item bigger-font">{{pet.pet_name}}</p>
+                        <p class="info-item bigger-font">{{pet.description}}</p>
+                    </div>
+                    <br>
+                    <div class="button-container ">
+                        
+                        <img src="assets/favorite_icon.png" alt="Favorite Icon" class="favorite-icon hidden" id="favorite-icon" >
+                        <img src="assets/favorite_icon2.png" alt="Favorite Icon 2" class="favorite-icon2" id="favorite-icon2" >
+                        <a href="/adopt">
+                            <img src="assets/adopt_icon.png" alt="Adopt Icon" class="adopt-icon" id="adopt-icon" >
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                {{/each}}
+            </div>
+            </div>
+        </div>
+        <script src="js/favorites.js"></script>
