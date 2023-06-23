@@ -1,71 +1,51 @@
 <div class="mb-4 project" id="blogbox">
-
   <div>
-
-    <img src="/public/assets/sign_up.png" alt="Sign Up">
-
+    <img src="/assets/sign_up.png" alt="Sign Up">
   </div>
-
   <section class="section">
-
-    <p class="is-size-4 is-size-6-mobile has-text-justified">Welcome to our pet adoption site! Please complete the following form to create your account:</p>
-
-    <form class="box formbgc">
-
-      <div class="columns">
-
-        <!-- Username Field -->
-        <div class="field column">
-
-          <label class="label">Username</label>
-
-          <div class="control">
-
-            <input class="input" type="text" placeholder="e.g. coolusername">
-
+    <div class="container card formbgc p-6">
+      <form class="signup-form">
+        <div class="columns is-multiline">
+          <!-- Username Field -->
+          <div class="column is-one-third">
+            <div class="field has-text-centered">
+              <label class="label" for="username-signup">Username</label>
+              <div class="control">
+                <input id="username-signup" class="input" type="text" placeholder="e.g. coolusername">
+              </div>
+            </div>
           </div>
-
-        </div>
-
-        <!-- Email Field -->
-        <div class="field column">
-
-          <label class="label">Email</label>
-
-          <div class="control">
-
-            <input class="input" type="email" placeholder="e.g. alex@example.com">
-
+          <!-- Email Field -->
+          <div class="column is-one-third">
+            <div class="field has-text-centered">
+              <label class="label" for="email-signup">Email</label>
+              <div class="control">
+                <input id="email-signup" class="input" type="email" placeholder="e.g. alex@example.com">
+              </div>
+            </div>
           </div>
-
-        </div>
-
-        <!-- Password Field -->
-        <div class="field column">
-
-          <label class="label">Password</label>
-
-          <div class="control">
-
-            <input class="input" type="password" placeholder="********">
-
+          <!-- Password Field -->
+          <div class="column is-one-third">
+            <div class="field has-text-centered">
+              <label class="label" for="password-signup">Password</label>
+              <div class="control">
+                <input id="password-signup" class="input" type="password" placeholder="********">
+              </div>
+            </div>
           </div>
-
+          <!-- Submit Button -->
+          <div class="column is-full">
+            <div class="field is-grouped is-justify-content-center">
+              <div class="control">
+                <button class="button custom-box-sl" type="submit">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-
-      </div>
-
-      <!-- Submit Button -->
-      <div class="field has-text-centered">
-
-        <button class="button loginbtn has-text-white">Submit</button>
-
-      </div>
-
-    </form>
-
+      </form>
+    </div>
   </section>
-
 </div>
-
-<!-- Pending to sync js file -->
+<script src="./js/signup.js"></script>
