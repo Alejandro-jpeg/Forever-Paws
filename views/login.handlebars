@@ -1,51 +1,58 @@
-<div class=" mb-4 project" id="blogbox">
+<div class="mb-4 project" id="blogbox">
 
-            <div>
+  <div>
 
-                <img src="/public/assets/login.png" alt="Login">
-            
-            </div>
-            
-            <section class="section">
+    <img src="/public/assets/login.png" alt="Login">
 
-                <p class="is-size-4 is-size-6-mobile has-text-justified" >
+  </div>
+        
+  <section class="section">
 
-                    Please login to access your dashboard
+    <p class="is-size-4 is-size-6-mobile has-text-justified">Please login to access your dashboard</p>
 
-                </p>
-                
-                <form class="box formbgc">
+    <form class="box formbgc">
+        
+      <div class="columns">
+          
+        <!-- Email Field -->
+        <div class="field column">
+          
+          <label for="email-login" class="label">Email</label>
+          
+          <div class="control">
 
-                    <div class="field">
+            <input class="input" type="email" placeholder="e.g. alex@example.com">
 
-                      <label for="email-login" class="label">Email</label>
+          </div>
+          
+        </div>
 
-                      <div class="control">
+        <!-- Password Field -->
+        <div class="field column">
+          
+          <label for="password-login" class="label">Password</label>
+          
+          <div class="control">
 
-                        <input class="input" type="email" placeholder="e.g. alex@example.com">
+            <input class="input" type="password" placeholder="********">
 
-                      </div>
+          </div>
+          
+        </div>
+          
+        </div>
+        
+        <!-- Login Button -->
+        <div class="field has-text-centered">
 
-                    </div>
-                  
-                    <div class="field">
+          <button class="button loginbtn has-text-white">Login</button>
 
-                      <label for="password-login" class="label">Password</label>
-
-                      <div class="control">
-
-                        <input class="input" type="password" placeholder="********">
-
-                      </div>
-
-                    </div>
-                  
-                    <button class="button loginbtn has-text-white">Login</button>
-
-                </form>
-            
-            </section>
-
+        </div>
+        
+    </form>
+        
+  </section>
+        
 </div>
 
 <script src="/public/js/login.js"></script>
