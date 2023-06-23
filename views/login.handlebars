@@ -1,58 +1,46 @@
 <div class="mb-4 project" id="blogbox">
-
   <div>
-
-    <img src="/public/assets/login.png" alt="Login">
-
+      <img src="assets/login.png" alt="Login">
   </div>
-        
   <section class="section">
-
-    <p class="is-size-4 is-size-6-mobile has-text-justified">Please login to access your dashboard</p>
-
-    <form class="box formbgc">
-        
-      <div class="columns">
-          
-        <!-- Email Field -->
-        <div class="field column">
-          
-          <label for="email-login" class="label">Email</label>
-          
-          <div class="control">
-
-            <input class="input" type="email" placeholder="e.g. alex@example.com">
-
-          </div>
-          
-        </div>
-
-        <!-- Password Field -->
-        <div class="field column">
-          
-          <label for="password-login" class="label">Password</label>
-          
-          <div class="control">
-
-            <input class="input" type="password" placeholder="********">
-
-          </div>
-          
-        </div>
-          
-        </div>
-        
-        <!-- Login Button -->
-        <div class="field has-text-centered">
-
-          <button class="button loginbtn has-text-white">Login</button>
-
-        </div>
-        
-    </form>
-        
+      <div class="container card formbgc p-6">
+          <form class="login-form">
+              <div class="columns is-multiline">
+                  <!-- Email Field -->
+                  <div class="column is-half">
+                      <div class="field has-text-centered">
+                          <label class="label" for="email-login">Email</label>
+                          <div class="control">
+                              <div>
+                                  <input class="input" type="text" id="email-login" />
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Password Field -->
+                  <div class="column is-half">
+                      <div class="field has-text-centered">
+                          <label class="label" for="password-login">Password</label>
+                          <div class="control">
+                              <div>
+                                  <input class="input" type="password" id="password-login" />
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- Submit Button -->
+                  <div class="column is-full">
+                      <div class="field is-grouped is-justify-content-center">
+                          <div class="control">
+                              <button class="button custom-box-sl" type="submit">
+                                  Submit
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </form>
+      </div>
   </section>
-        
 </div>
-
-<script src="/public/js/login.js"></script>
+<script src="./js/login.js"></script>
