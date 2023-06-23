@@ -18,47 +18,55 @@ User.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoincrement: true,
+      autoIncrement: true,
     },
-    full_name: {
+    username: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    phone: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isDecimal: true,
       },
-    },
-    email_address: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isEmail: true,
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+            isEmail: true,
         },
-    }, password: {
+    },
+    password: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          len: [8],
+            len: {
+                minLen: 8,
+                msg: 'Password must be at least 8 characters long.',
+            },
         },
-      },
+    },
+    full_name: {
+      type: DataTypes.STRING,
+
+    },
+    phone: {
+      type: DataTypes.STRING,
+    },
+
     street_address: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
+
     description: {
       type: DataTypes.TEXT,
     },
+
     favorite_pet_id: {
       type: DataTypes.INTEGER,
-      reference: {
+      references: {
         model: "pet",
         key: "id",
       },
     },
   },
+  
   {
   hooks: {
     async beforeCreate(newUserData) {
