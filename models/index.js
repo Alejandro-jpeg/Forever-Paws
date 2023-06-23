@@ -1,27 +1,24 @@
 // import models
-const Agencies = require('./Agencies');
-const Pets = require('./Pet');
-const User = require('./User');
+const Agency = require("./Agency");
+const Pet = require("./Pet");
+const User = require("./User");
 
-// Products belongsTo Category
-Pets.belongsTo(Agencies, {
-  foreignKey: 'agency',
-});
+// Pets belong to Agency
+Agency.hasMany(Pet);
+Pet.belongsTo(Agency);
 
 // Categories have many Products
-User.hasMany(Pets, {
-  foreignKey: 'favorite_pet_id',
+User.hasMany(Pet, {
+  foreignKey: "favorite_pet_id",
 });
 
-// Products belongToMany Tags (through ProductTag)
-Pets.belongsto(Agencies, {
-  foreignKey: 'location',
-});
-
-
+// // Products belongToMany Tags (through ProductTag)
+// Pet.belongsto(Agency, {
+//   foreignKey: 'location',
+// });
 
 module.exports = {
-  Pets,
+  Pet,
   User,
-  Agencies,
+  Agency,
 };
