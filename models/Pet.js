@@ -35,13 +35,6 @@ Pet.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // location:{
-    //     type: DataTypes.STRING,
-    //     references:{
-    //         model:'agency',
-    //         key: 'location',
-    //     },
-    // },
     agency_id: {
       type: DataTypes.STRING,
       references: {

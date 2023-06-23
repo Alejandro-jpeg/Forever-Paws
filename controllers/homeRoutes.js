@@ -36,13 +36,26 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/login', async(req, res) => {
+router.get('/login', (req, res) => {
+    // If the user is already logged in, redirect the request to another route
+    if (req.session.logged_in) {
+        res.redirect('/dashboard');
+        return;
+    }
+    
     res.render('login');
-})
+});
 
-router.get('/signup', async(req, res) => {
+
+router.get('/signup', (req, res) => {
+    // If the user is already logged in, redirect the request to another route
+    if (req.session.logged_in) {
+        res.redirect('/dashboard');
+        return;
+    }
+    
     res.render('signup');
-})
+});
 
 router.get('/aboutus', async(req, res) => {
     res.render('aboutus');
@@ -60,6 +73,10 @@ router.get('/ally', async(req, res) => {
     res.render('become_ally');
 })
 
+router.get('/submitpet', async(req, res) => {
+    res.render('submit_pet');
+})
+
 router.get('/dashboard', async(req, res) => {
     if(req.session.loggedIn = true){
         res.render('dashboard');
@@ -67,7 +84,5 @@ router.get('/dashboard', async(req, res) => {
         res.render('login');
     }
 })
-
-
 
 module.exports = router;

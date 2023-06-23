@@ -17,7 +17,6 @@ Agency.init(
     },
     email: {
       type: DataTypes.STRING,
-      allowNull: false,
       unique: true,
       validate: {
         isEmail: true,
@@ -29,7 +28,6 @@ Agency.init(
     },
     webpage: {
       type: DataTypes.STRING,
-      allowNull: true,
       validate: {
         isUrl: true,
       },
