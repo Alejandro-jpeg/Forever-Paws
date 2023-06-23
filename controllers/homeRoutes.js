@@ -85,4 +85,8 @@ router.get('/dashboard', async(req, res) => {
     }
 })
 
+router.post('/query_results', async(req, res) => {
+    console.log(req.body);
+})
+
 module.exports = router;

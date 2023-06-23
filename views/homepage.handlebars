@@ -47,8 +47,8 @@
                     <div class="field">
                         <label class="label">Breed</label>
                         <div class="control">
-                            <div class="select" id="#breed-dropdown">
-                                <select name="breed">
+                            <div class="select">
+                                <select name="breed" id="breed-dropdown">
                                     <!-- Populate options dynamically using homeRoutes -->
                                     <option value="">Select a type</option>
                                     {{#each breeds as |breed|}}
@@ -66,7 +66,7 @@
                         <label class="label">Gender</label>
                         <div class="control">
                             <div class="select">
-                                <select name="gender" id="#gender-dropdown">
+                                <select name="gender" id="gender-dropdown">
                                     <!-- Populate options dynamically using homeRoutes -->
                                     <option value="">Select a gender</option>
                                     {{#each genders as |gender|}}
@@ -84,7 +84,7 @@
                         <label class="label">Age Range</label>
                         <div class="control">
                             <div class="select">
-                                <select name="ageRange" id="#age-range-dropdown">
+                                <select name="ageRange" id="age-range-dropdown">
                                     <!-- Populate options dynamically using homeRoutes -->
                                     <option value="">Select an age range</option>
                                     {{#each ageRanges as |ageRAnge|}}
@@ -102,7 +102,7 @@
                         <label class="label">Agency</label>
                         <div class="control">
                             <div class="select">
-                                <select name="agency" id="#agency-dropdown">
+                                <select name="agency" id="agency-dropdown">
                                     <!-- Populate options dynamically using homeRoutes -->
                                     <option value="">Select an agency</option>
                                     {{#each agencies as |agency|}}
