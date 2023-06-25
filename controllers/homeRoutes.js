@@ -78,8 +78,26 @@ router.get('/submitpet', async(req, res) => {
 })
 
 router.post('/query_results', async(req, res) => {
+    res.json(req.body);
     console.log(req.body);
 })
+
+router.get('/query_results', async(req, res) => {
+    /* try {
+        const petResults = await Pet.findAll({
+            where:{
+                pet_type: req.body.type,
+                pet_breed: req.body.breed,
+                pet_gender: req.body.gender,
+                pet_age_range: req.body.ageRange,
+                agency_id: req.body.agency
+            },
+        }); */
+        res.render('query_results'); //,Pet[petResults]
+    /* } catch (err) {
+        console.log(err);
+    } */
+});
 
 
 router.get('/dashboard', withAuth, async (req, res) => {

@@ -10,12 +10,12 @@ let selectedResults = [];
 
 
 searchButton.addEventListener("click", () => {
-  const selectedCity = cityDropdown && cityDropdown.value ? [cityDropdown.value] : [];
-  const selectedType = typeDropdown && typeDropdown.value ? [typeDropdown.value] : [];
-  const selectedBreed = breedDropdown && breedDropdown.value ? [breedDropdown.value] : [];
-  const selectedGender = genderDropdown && genderDropdown.value ? [genderDropdown.value] : [];
-  const selectedAgeRange = ageRangeDropdown && ageRangeDropdown.value ? [ageRangeDropdown.value] : [];
-  const selectedAgency = agencyDropdown && agencyDropdown.value ? [agencyDropdown.value] : [];
+  const selectedCity = cityDropdown && cityDropdown.value ? cityDropdown.value : null;
+  const selectedType = typeDropdown && typeDropdown.value ? typeDropdown.value : null;
+  const selectedBreed = breedDropdown && breedDropdown.value ? breedDropdown.value : null;
+  const selectedGender = genderDropdown && genderDropdown.value ? genderDropdown.value : null;
+  const selectedAgeRange = ageRangeDropdown && ageRangeDropdown.value ? ageRangeDropdown.value : null;
+  const selectedAgency = agencyDropdown && agencyDropdown.value ? agencyDropdown.value : null;
 
 
   let selectedResults = {
@@ -37,7 +37,6 @@ searchButton.addEventListener("click", () => {
   }
   if (selectedBreed) {
     queryParams.push(`breed=${selectedBreed}`);
-    console.log(selectedBreed);
   }
   if (selectedGender) {
     queryParams.push(`gender=${selectedGender}`);
@@ -60,7 +59,7 @@ searchButton.addEventListener("click", () => {
   })
     .then((response) => response.json())
     .then((data) => {
-      const queryHandlebar = `http://localhost:3001/query_results.handlebars?${queryParams.join('&')}`;
+      const queryHandlebar = `http://localhost:3001/query_results?${queryParams.join('&')}`;
 
       window.location.href = queryHandlebar;
 
