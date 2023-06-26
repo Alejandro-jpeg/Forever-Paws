@@ -10,6 +10,13 @@
 
 ##   📝 Description
 
+The Forever Paws Pet Adoption Portal is an innovative platform designed to facilitate the process of pet adoption and connect prospective pet owners with shelters and rescue agencies. 
+The portal serves as a centralized hub where individuals interested in adopting a pet can browse through a wide variety of available animals and make informed decisions based on their preferences. 
+The concept behind Forever Paws is to provide a user-friendly interface that streamlines the adoption process, making it easier for both potential pet owners and animal shelters to find suitable matches. 
+Through the portal, users can search for pets based on factors such as species, breed, age, and location, enabling them to find their ideal companion. 
+The platform also offers comprehensive profiles for each animal, including photos, descriptions, and relevant details, ensuring that potential adopters have all the necessary information before deciding. 
+By leveraging technology and collaboration with rescue agencies, Forever Paws aims to increase pet adoptions, promote responsible ownership, and ultimately contribute to the well-being of animals in need of a loving home.
+
 
 ---
 
@@ -109,7 +116,7 @@
 
 The github URL containing the code for this project is located at:
 
-
+https://github.com/Alejandro-jpeg/Forever-Paws/
 
 </br>
 
@@ -144,10 +151,11 @@ Heroku Page:
 
 </br>
 
-
-- https://shields.io/category/license
-- https://github.com/devicons/devicon/tree/master/icons
--
+- [SalasGS94](https://github.com/SalasGS94)
+- [Andrea Ceron](https://github.com/aceron2205)
+- [Samuel Munguia](https://github.com/samuel-6)
+- [Eva Longoria](https://github.com/Maelikah/)
+- [Alejandro Lopez](https://github.com/Alejandro-jpeg/)
 
 
 </br>
@@ -178,8 +186,9 @@ NA
 </br>
 
 ```md
-
-
+As  a potential adopter, 
+I want to be able to search for learn about and adopt a pet through the Forever Paws adoption portal, 
+so that I can provide a loving home to a homeless animal.
 ```
 
 
@@ -195,9 +204,14 @@ NA
 
 
 ```md
-
-
- 
+The adoption portal should have a responsive and visually appealing user interface, implemented using Handlebars for efficient front-end rendering.
+The portal should utilize Express.js as the backend framework to handle routing and API requests.
+The database should be implemented using SQL, and Sequelize should be used as the ORM (Object-Relational Mapping) tool for data modeling and querying.
+The adoption portal should support user registration and authentication to ensure secure access to adoption-related functionalities.
+Users should be able to search for pets based on various criteria, such as pet type, breed, age range, and location.
+The portal should display detailed pet profiles, including information such as name, breed, gender, age, description, and photos.
+Users should be able to initiate the adoption process by filling out an adoption application form.
+Users should be able to submit pets for adoption using a form and Multer for photo handling.
 ```
 
 </br>
