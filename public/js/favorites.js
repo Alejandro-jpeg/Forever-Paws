@@ -1,68 +1,80 @@
-var favoriteIcon = document.getElementById("favorite-icon");
-var favoriteIcon2 = document.getElementById("favorite-icon2");
+var favoriteIcon = document.querySelectorAll(".favorite-icon");
+var favoriteIcon2 = document.querySelectorAll(".favorite-icon2");
 const adoptIcon = document.getElementById("adopt-icon");
 
-favoriteIcon.addEventListener("click", function() {
-    addToFavorites();
-    favoriteIcon.classList.add("hidden");
-    favoriteIcon2.classList.remove("hidden");
+favoriteIcon.forEach(icon => {
+
+    icon.addEventListener("click", function() {
+
+        const petId = icon.dataset.petid;
+        toggleFavorite(true, petId);
+        icon.classList.add("hidden");
+
+    });
+
 });
 
-favoriteIcon2.addEventListener("click", function() {
-    removeFromFavorites();
-    favoriteIcon2.classList.add("hidden");
-    favoriteIcon.classList.remove("hidden");
+favoriteIcon2.forEach(icon => {
+
+    icon.addEventListener("click", function() {
+
+        const petId = icon.dataset.petid;
+        toggleFavorite(false, petId);
+        icon.classList.add("hidden");
+
+    });
+
 });
 
-adoptIcon.addEventListener("click", () =>{
-    adoptionGet();
-});
+adoptIcon.forEach(icon => {
 
-function addToFavorites() {
+    icon.addEventListener("click", function() {
 
-    // Replace with final endpoint
-    fetch('/api/addToFavorites', {
-
-        method: 'POST',
-        headers: {
-
-            'Content-Type': 'application/json'
-
-        },
-        body: JSON.stringify({
-
-            // Include data here, like the user ID and the pet ID
-
-        })
+        // Pending logic
+        adoptionGet();
 
     })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error('Error', error));
+
+})
+
+async function toggleFavorite(shouldFavorite, petId) {
+
+    try {
+
+        const userId = await getCurrentUserId();
+
+        await fetch('/api/dashboard/toggleFavorite', {
+
+            method: 'POST',
+            headers: {
+
+                'Content-Type': 'application/json'
+
+            },
+            body: JSON.stringify({
+
+                user_id: userId,
+                pet_id: petId,
+                shouldFavorite
+
+            })
+
+        });
+
+    }
+    catch(error) {
+
+        console.error('Error', error);
+
+    }
 
 }
 
-function removeFromFavorites() {
+async function getCurrentUserId() {
 
-    // Replace with final endpoint
-    fetch('/api/removeFromFavorites', {
-
-        method: 'POST',
-        headers: {
-
-            'Content-Type': 'application/json/'
-
-        },
-        body: JSON.stringify({
-
-            // Include data here, like the user ID and pet ID
-
-        })
-        
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error('Error: ', error));
+    const response = await fetch('/api/users/current');
+    const data = await response.json();
+    return data.id;
 
 }
 
