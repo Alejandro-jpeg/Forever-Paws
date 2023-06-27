@@ -81,6 +81,10 @@ router.get("/adoption", async (req, res) => {
   res.render("adoption_process");
 });
 
+router.get("/adoption_form", async (req, res) => {
+  res.render("adoption_form");
+});
+
 router.get("/literature", async (req, res) => {
   res.render("pet_literature");
 });

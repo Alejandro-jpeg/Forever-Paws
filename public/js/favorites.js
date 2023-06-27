@@ -45,7 +45,7 @@ function removeFromFavorites() {
         method: 'POST',
         headers: {
 
-            'Content-Ty[e': 'application/json/'
+            'Content-Type': 'application/json/'
 
         },
         body: JSON.stringify({
