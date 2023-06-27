@@ -97,16 +97,9 @@ router.get("/submitpet", async (req, res) => {
   res.render("submit_pet");
 });
 
-
-router.get("/congratulations", async (req, res) => {
-  res.render("congratulations");
-});
-
-
 router.get("/thankyou", async (req, res) => {
   res.render("thankyou");
 });
-
 
 
 // router.post("/query_results", async (req, res) => {
