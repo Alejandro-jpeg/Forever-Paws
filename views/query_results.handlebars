@@ -11,13 +11,13 @@
         <div class="card querycard has-text-centered">
             <div class="card-content">
             <div class="card has-background-white">
-                <img src="{{pet.imageURL}}" alt="{{pet.imageURL}}">
+                <img src="{{pet.pet_photo}}" alt="{{pet.pet_name}}">
             </div>
             <br>
             <div class="card formbgc">
                 <p class="info-item">{{pet.pet_gender}}</p>
                 <p class="info-item">{{pet.pet_age_range}}</p>
-                <p class="info-item">{{pet.pet_type}}</p>
+                <p class="info-item">{{pet.pet_breed}}</p>
                 <p class="info-item">@{{pet.agency.location}}</p>
                 <p class="info-item">by: {{pet.agency.name}}</p>
             </div>
@@ -31,9 +31,7 @@
                 
                 <img src="assets/favorite_icon.png" alt="Favorite Icon" class="favorite-icon" id="favorite-icon" >
                 <img src="assets/favorite_icon2.png" alt="Favorite Icon 2" class="favorite-icon2 hidden" id="favorite-icon2" >
-                <a href="/adoption_form">
-                    <img src="assets/adopt_icon.png" alt="Adopt Icon" class="adopt-icon" id="adopt-icon" >
-                </a>
+                <img src="assets/adopt_icon.png" alt="Adopt Icon" class="adopt-icon" id="adopt-icon" >
             </div>
             </div>
         </div>
