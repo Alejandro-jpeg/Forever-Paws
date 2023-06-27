@@ -97,17 +97,21 @@ router.get("/submitpet", async (req, res) => {
 //   console.log(req.body);
 //   console.log("maluma");
 // });
+//------------------------------------------------------------------------------------------------------------------------------------------------------//
 
 router.get("/query_results", async (req, res) => {
   console.log("los query", req.query);
   try {
     const { city, pet_type, pet_breed, pet_gender, pet_age_range, agency_id } =
       req.query;
-    
-      //city is not yet working
+
     const results = await Pet.findAll({
+      include: {
+        model: Agency,
+        where: { location: city },
+      },
+
       where: {
-        // ...(city && { city: city }),
         ...(pet_type && { pet_type }),
         ...(pet_breed && { pet_breed }),
         ...(pet_gender && { pet_gender }),
@@ -116,13 +120,20 @@ router.get("/query_results", async (req, res) => {
       },
     });
     // Results retun an ARRAY of Pet objects, so we just need to grab the property called dataValues from within each one
-    const pets = results.map((r) => r.dataValues);
+    const pets = results.map((r) => {
+      r.dataValues.agency = r.dataValues.agency.dataValues;
+
+      return r.dataValues;
+    });
+
     res.render("query_results", { pets });
   } catch (err) {
     console.log(err);
     res.status(500).json({ message: err });
   }
 });
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
