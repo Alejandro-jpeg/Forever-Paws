@@ -97,6 +97,10 @@ router.get("/submitpet", async (req, res) => {
   res.render("submit_pet");
 });
 
+router.get("/congratulations", async (req, res) => {
+  res.render("congratulations");
+});
+
 // router.post("/query_results", async (req, res) => {
 //   console.log(req.body);
 //   console.log("maluma");
