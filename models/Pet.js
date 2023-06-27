@@ -36,7 +36,7 @@ Pet.init(
       allowNull: false,
     },
     agency_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       references: {
         model: "agency",
         key: "id",
