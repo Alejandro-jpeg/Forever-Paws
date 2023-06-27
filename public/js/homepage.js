@@ -47,7 +47,7 @@ searchButton.addEventListener("click", () => {
   console.log(queryParams);
 
   const queryParamsString = queryParams.join("&");
-  window.location.href = `/query_results${queryParamsString}`;
+  window.location.href = `/query_results?${queryParamsString}`;
 
   console.log("heyy");
 
