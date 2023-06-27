@@ -23,7 +23,7 @@ const newPet = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/login');
+        document.location.replace('/thankyou');
       } else {
         alert('Failed to submit pet');
       }
