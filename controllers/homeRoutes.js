@@ -97,6 +97,7 @@ router.get("/submitpet", async (req, res) => {
 //   console.log(req.body);
 //   console.log("maluma");
 // });
+//------------------------------------------------------------------------------------------------------------------------------------------------------//
 
 router.get("/query_results", async (req, res) => {
   console.log("los query", req.query);
@@ -104,12 +105,13 @@ router.get("/query_results", async (req, res) => {
     const { city, pet_type, pet_breed, pet_gender, pet_age_range, agency_id } =
       req.query;
 
-    //city is not yet working
+
     const results = await Pet.findAll({
       include: {
         model: Agency,
         where: { location: city },
       },
+
       where: {
         ...(pet_type && { pet_type }),
         ...(pet_breed && { pet_breed }),
@@ -125,13 +127,17 @@ router.get("/query_results", async (req, res) => {
 
       return r.dataValues;
     });
+
     // console.log("PETS", pets);
+
     res.render("query_results", { pets });
   } catch (err) {
     console.log(err);
     res.status(500).json({ message: err });
   }
 });
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
