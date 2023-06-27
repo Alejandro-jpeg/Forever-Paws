@@ -7,66 +7,49 @@ const agencyDropdown = document.querySelector("#agency-dropdown");
 const searchButton = document.querySelector("#search-button");
 let selectedResults = [];
 
-
-
 searchButton.addEventListener("click", () => {
-  const selectedCity = cityDropdown && cityDropdown.value ? [cityDropdown.value] : [];
-  const selectedType = typeDropdown && typeDropdown.value ? [typeDropdown.value] : [];
-  const selectedBreed = breedDropdown && breedDropdown.value ? [breedDropdown.value] : [];
-  const selectedGender = genderDropdown && genderDropdown.value ? [genderDropdown.value] : [];
-  const selectedAgeRange = ageRangeDropdown && ageRangeDropdown.value ? [ageRangeDropdown.value] : [];
-  const selectedAgency = agencyDropdown && agencyDropdown.value ? [agencyDropdown.value] : [];
+  const selectedCity =
+    cityDropdown && cityDropdown.value ? [cityDropdown.value] : [];
+  const selectedType =
+    typeDropdown && typeDropdown.value ? [typeDropdown.value] : [];
+  const selectedBreed =
+    breedDropdown && breedDropdown.value ? [breedDropdown.value] : [];
+  const selectedGender =
+    genderDropdown && genderDropdown.value ? [genderDropdown.value] : [];
+  const selectedAgeRange =
+    ageRangeDropdown && ageRangeDropdown.value ? [ageRangeDropdown.value] : [];
+  const selectedAgency =
+    agencyDropdown && agencyDropdown.value ? [agencyDropdown.value] : [];
 
 
-  let selectedResults = {
-    city: selectedCity,
-    type: selectedType,
-    breed: selectedBreed,
-    gender: selectedGender,
-    ageRange: selectedAgeRange,
-    agency: selectedAgency,
-  };
-
-  const queryParams = []
+  const queryParams = [];
 
   if (selectedCity) {
-    queryParams.push(`city=${selectedCity}`);
+    queryParams.push(`city=${encodeURIComponent(selectedCity)}`);
   }
   if (selectedType) {
-    queryParams.push(`type=${selectedType}`);
+    queryParams.push(`pet_type=${encodeURIComponent(selectedType)}`);
   }
   if (selectedBreed) {
-    queryParams.push(`breed=${selectedBreed}`);
-    console.log(selectedBreed);
+    queryParams.push(`pet_breed=${encodeURIComponent(selectedBreed)}`);
   }
   if (selectedGender) {
-    queryParams.push(`gender=${selectedGender}`);
+    queryParams.push(`pet_gender=${encodeURIComponent(selectedGender)}`);
   }
   if (selectedAgeRange) {
-    queryParams.push(`ageRange=${selectedAgeRange}`);
+    queryParams.push(`pet_age_range=${encodeURIComponent(selectedAgeRange)}`);
   }
   if (selectedAgency) {
-    queryParams.push(`agency=${selectedAgency}`);
+    queryParams.push(`agency_id=${encodeURIComponent(selectedAgency)}`);
   }
 
   
-  //hacer navegacion al query params a la query view
-  fetch("/query_results", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(selectedResults),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      const queryHandlebar = `http://localhost:3001/query_results.handlebars?${queryParams.join('&')}`;
+  console.log(queryParams);
 
-      window.location.href = queryHandlebar;
+  const queryParamsString = queryParams.join("&");
+  window.location.href = `/query_results${queryParamsString}`;
 
-      console.log(data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+  console.log("heyy");
+
+  
 });
