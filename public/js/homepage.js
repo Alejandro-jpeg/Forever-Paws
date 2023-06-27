@@ -21,7 +21,6 @@ searchButton.addEventListener("click", () => {
   const selectedAgency =
     agencyDropdown && agencyDropdown.value ? [agencyDropdown.value] : [];
 
-
   const queryParams = [];
 
   if (selectedCity) {
@@ -43,13 +42,10 @@ searchButton.addEventListener("click", () => {
     queryParams.push(`agency_id=${encodeURIComponent(selectedAgency)}`);
   }
 
-  
   console.log(queryParams);
 
   const queryParamsString = queryParams.join("&");
-  window.location.href = `/query_results${queryParamsString}`;
+  window.location.href = `/query_results?${queryParamsString}`;
 
   console.log("heyy");
-
-  
 });

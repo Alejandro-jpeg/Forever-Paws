@@ -4,8 +4,11 @@ const Pet = require("./Pet");
 const User = require("./User");
 
 // Pets belong to Agency
-Agency.hasMany(Pet);
-Pet.belongsTo(Agency);
+// Agency.hasMany(Pet);
+// Pet.belongsTo(Agency);
+
+Pet.belongsTo(Agency, { foreignKey: "agency_id" });
+Agency.hasMany(Pet, { foreignKey: "agency_id" });
 
 // Categories have many Products
 User.hasMany(Pet, {
