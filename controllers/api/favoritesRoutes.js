@@ -2,12 +2,12 @@ const router = require('express').Router();
 const {FavoritePet} = require('../../models/FavoritePet');
 
 // This endpoint is used to GET the favorites list from a user
-router.get('/dashboard', async(req, res) => {
+router.get('/:user_id', async(req, res) => {
 
     try {
 
-        // Here goes all the logic to GET the favorites list from the user
-        const favorites = await FavoritePet.findAll();
+        const user_id = req.params.user_id;
+        const favorites = await FavoritePet.findAll({where: {user_id}});
         res.json(favorites);
 
     }
@@ -20,14 +20,25 @@ router.get('/dashboard', async(req, res) => {
 
 });
 
-// This endpoint is used to ADD a favorite to the user
-router.post('/dashboard', async(req, res) => {
+// This endpoint is used to toggle favorite status of a pet for a specific user
+router.post('/toggleFavorite', async(req, res) => {
 
-    try{
+    try {
 
-        // Here goes all the logic to ADD a favorite to the user
-        const newFavorite = await FavoritePet.create(req.body);
-        res.status(200).json({message: 'Created new favorite'});
+        const {user_id, pet_id, shouldFavorite} = req.body;
+
+        if(shouldFavorite) {
+
+            // Add to favorites
+            await FavoritePet.create({user_id, pet_id});
+
+        }
+        else {
+
+            // Remove from favorites
+            await FavoritePet.destroy({where: {user_id, pet_id}});
+        }
+        res.status(200).json({message: 'Operation successful'});
 
     }
     catch(err) {
@@ -38,3 +49,5 @@ router.post('/dashboard', async(req, res) => {
     }
 
 });
+
+module.exports = router;
