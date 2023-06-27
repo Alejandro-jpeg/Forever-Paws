@@ -6,7 +6,7 @@ const agencyRoutes = require('./agencyRoutes');
 const favoritesRoutes = require('./favoritesRoutes');
 
 /* UNCOMMENT UNTIL WE ARE USING THEM */
-/* router.use('/pets', petRoutes); */
+router.use('/pets', petRoutes);
 router.use('/users', userRoutes);
 /*xrouter.use('/dashboard', favoritesRoutes);
 /* router.use('/agencies', agencyRoutes); */
