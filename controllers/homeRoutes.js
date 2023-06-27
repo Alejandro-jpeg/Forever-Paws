@@ -103,7 +103,7 @@ router.get("/submitpet", async (req, res) => {
 // });
 //------------------------------------------------------------------------------------------------------------------------------------------------------//
 
-router.get("/query_results", async (req, res) => {
+router.post("/query_results", async (req, res) => {
   console.log("los query", req.query);
   try {
     const { city, pet_type, pet_breed, pet_gender, pet_age_range, agency_id } =

@@ -49,7 +49,7 @@ searchButton.addEventListener("click", () => {
   const queryParamsString = queryParams.join("&");
   window.location.href = `/query_results?${queryParamsString}`;
 
-  console.log("heyy");
+
 
   
 });
