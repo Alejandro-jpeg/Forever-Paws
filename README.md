@@ -109,7 +109,7 @@ By leveraging technology and collaboration with rescue agencies, Forever Paws ai
 3. Run `npm run seed` to populate the database with seeds
 4. Run `npm start` to initialize the server
 5. Go to `http://localhost:3001` to access the app
-6. Alternatively, you can visit the deployed app in [Heroku](https://devdocs.io/javascript/)
+6. Alternatively, you can visit the deployed app in [Heroku](https://forever-paws-dca2d60341df.herokuapp.com/)
 
 
 </br>
@@ -123,7 +123,7 @@ https://github.com/Alejandro-jpeg/Forever-Paws/
 
 Heroku Page:
 
-
+https://forever-paws-dca2d60341df.herokuapp.com/
 
 </br>
 
@@ -152,10 +152,10 @@ Heroku Page:
 </br>
 
 - [SalasGS94](https://github.com/SalasGS94)
-- [Andrea Ceron](https://github.com/aceron2205)
-- [Samuel Munguia](https://github.com/samuel-6)
-- [Eva Longoria](https://github.com/Maelikah/)
-- [Alejandro Lopez](https://github.com/Alejandro-jpeg/)
+- [aceron2205](https://github.com/aceron2205)
+- [samuel-6](https://github.com/samuel-6)
+- [Maelikah](https://github.com/Maelikah/)
+- [Alejandro-jpeg](https://github.com/Alejandro-jpeg/)
 
 
 </br>
