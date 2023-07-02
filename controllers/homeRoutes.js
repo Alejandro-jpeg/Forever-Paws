@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Agency, Pet, User } = require("../models");
+const { Agency, Pet, User, FavoritePet } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
@@ -148,6 +148,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
+      include: [{model: Pet, through: FavoritePet}]
     });
 
     // Check if user data exists
@@ -158,6 +159,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
 
     // Serialize data to be used by handlebars
     const user = userData.get({ plain: true });
+    console.log(user);
 
     res.render("dashboard", {
       ...user,

@@ -43,7 +43,7 @@ async function toggleFavorite(shouldFavorite, petId) {
 
         const userId = await getCurrentUserId();
 
-        await fetch('/api/dashboard/toggleFavorite', {
+        const response = await fetch('/api/dashboard/toggleFavorite', {
 
             method: 'POST',
             headers: {
@@ -60,7 +60,8 @@ async function toggleFavorite(shouldFavorite, petId) {
             })
 
         });
-
+        const result = await response.json();
+        console.log(result);
     }
     catch(error) {
 

@@ -1,9 +1,10 @@
 const router = require('express').Router();
-const {FavoritePet} = require('../../models/FavoritePet');
+const {FavoritePet} = require('../../models');
 
 // This endpoint is used to GET the favorites list from a user
 router.get('/:user_id', async(req, res) => {
 
+    console.log("Hello");
     try {
 
         const user_id = req.params.user_id;
@@ -25,12 +26,15 @@ router.post('/toggleFavorite', async(req, res) => {
 
     try {
 
+        console.log(req.body);
+
         const {user_id, pet_id, shouldFavorite} = req.body;
 
         if(shouldFavorite) {
 
             // Add to favorites
-            await FavoritePet.create({user_id, pet_id});
+            const favorite = await FavoritePet.create({user_id, pet_id});
+            console.log(favorite);
 
         }
         else {
@@ -44,7 +48,7 @@ router.post('/toggleFavorite', async(req, res) => {
     catch(err) {
 
         console.error(err);
-        res.status(500).json({message: 'Internal server error'});
+        res.status(500).json({err});
 
     }
 

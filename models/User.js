@@ -58,13 +58,13 @@ User.init(
       type: DataTypes.TEXT,
     },
 
-    favorite_pet_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "pet",
-        key: "id",
-      },
-    },
+    // favorite_pet_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "pet",
+    //     key: "id",
+    //   },
+    // },
   },
   
   {
