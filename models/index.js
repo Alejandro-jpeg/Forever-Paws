@@ -13,9 +13,9 @@ User.belongsToMany(Pet, {through: FavoritePet, foreignKey: "user_id"});
 Pet.belongsToMany(User, {through: FavoritePet, foreignKey: "pet_id"});
 
 // Categories have many Products
-User.hasMany(Pet, {
-  foreignKey: "favorite_pet_id",
-});
+// User.hasMany(Pet, {
+//   foreignKey: "favorite_pet_id",
+// });
 
 
 module.exports = {
